@@ -1,3 +1,10 @@
+# Nativescript + Angular 2 workshop for JSConf Colombia
+
+> This workshop assumes you have already set up your system for Mobile development. 
+> If not, please refer to http://docs.nativescript.org/angular/start/quick-setup
+
+### Instructions
+
 1. Install Nativescript. Open Terminal and type:
 
 	``` sh
