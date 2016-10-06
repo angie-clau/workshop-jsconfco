@@ -241,6 +241,9 @@ and then:
 	})
 
 	export class LoginComponent {
+		constructor(private page: Page) {
+			page.actionBarHidden = true;
+		}
 	}
 	```
 
@@ -283,7 +286,11 @@ and then:
 		styleUrls: ['pages/login/login-common.css', 'pages/login/login.css']
 	})
 
-	export class LoginComponent { }
+	export class LoginComponent {
+		constructor(private page: Page) {
+				page.actionBarHidden = true;
+		}
+	}
 	```
 
 	Then, open your `app/pages/login/login.android.scss` and paste the following code:
