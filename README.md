@@ -228,7 +228,7 @@ and then:
 	} 
 	```
 
-15. Hmmmm... it's not looking so good :/ so let's go and add some specific styles for our Login page. Open your `app/login/login.ts` and copy and paste the following:
+15. Hmmmm... it's not looking so good :/ so let's go and add some specific styles for our Login page. Open your `app/pages/login/login.ts` and copy and paste the following:
 
 	``` javascript
 	import {Component} from "@angular/core";
@@ -271,7 +271,7 @@ and then:
 	}
 	```
 
-16. Hmmmm... but that "login" Label doesn't look that pretty, what if we add some platform specific styles? Open your `app/login/login.ts` and paste:
+16. Hmmmm... but that "login" Label doesn't look that pretty, what if we add some platform specific styles? Open your `app/pages/login/login.ts` and paste:
 
 	``` javascript  
 	import {Component} from "@angular/core";
@@ -286,7 +286,7 @@ and then:
 	export class LoginComponent { }
 	```
 
-	Then, open your app/login/login.android.scss and paste the following code:
+	Then, open your `app/pages/login/login.android.scss` and paste the following code:
 
 	```scss
 	@import 'styles/_variables.scss';
@@ -299,7 +299,7 @@ and then:
 	}
 	```
 
-	and finally, open your app/login/login.ios.scss and paste the following code:
+	and finally, open your `app/pages/login/login.ios.scss` and paste the following code:
 
 	```scss
 	@import 'styles/_variables.scss';
@@ -312,7 +312,7 @@ and then:
 	}
 	```
 
-17. We have our Login page looking really pretty, so, now we'll have to create a new page to navigate after we press the Login btn. Let's go and create a new Character component, open your `app/characters/characters.ts` and paste:
+17. We have our Login page looking really pretty, so, now we'll have to create a new page to navigate after we press the Login btn. Let's go and create a new Character component, open your `app/pages/characters/characters.ts` and paste:
 
 	```javascript
 	import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
@@ -328,7 +328,7 @@ and then:
 	export class CharacterListComponent { }
 	```
 
-	and then open `app/characters/characters.html` and paste:
+	and then open `app/pages/characters/characters.html` and paste:
 
 	``` html
 	<!-- Action Bar -->
@@ -377,7 +377,7 @@ and then:
 	]; 
 	```
 
-	now let's go and add the tap event logic for our login button, copy and paste the following code inside your `app/login/login.ts` file:
+	now let's go and add the tap event logic for our login button, copy and paste the following code inside your `app/pages/login/login.ts` file:
 	
 	``` javascript
 	import {Component} from "@angular/core";
@@ -404,7 +404,7 @@ and then:
 	}
 	```
 
-	and then let's add a tap event handler for our login html, copy and paste the following code inside your `app/login/login.html`
+	and then let's add a tap event handler for our login html, copy and paste the following code inside your `app/pages/login/login.html`
 	
 	``` html
 	<GridLayout rows="*,*,*,*" columns="*" verticalAlignment="center" horizontalAlignment="stretch">
