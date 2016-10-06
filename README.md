@@ -581,7 +581,14 @@ and then:
 	tns plugin add nativescript-imagepicker
 	tns plugin add nativescript-permissions
 	```
-
+	>PLease note that for IOS 10 and newer versions you need to rquest for some permissions before access the user private data like gallery, contact number, photos , location , calendar , etc. So you'll have to declare the following in your `app/App_Resources/iOS/Info.plist` file:
+	
+	>``` xml
+	><key>NSPhotoLibraryUsageDescription</key>
+	><string>${PRODUCT_NAME} photo use</string>
+	><key>NSCameraUsageDescription</key>
+	><string>${PRODUCT_NAME} camera use</string>
+	>```
 	and then let's listen our changes again:
 
 	``` sh
@@ -674,14 +681,6 @@ and then:
 		}
 	}
 	```
-	>PLease note that for IOS 10 and newer versions you need to rquest for some permissions before access the user private data like gallery, contact number, photos , location , calendar , etc. So you'll have to declare the following in your `app/App_Resources/iOS/Info.plist` file:
-	
-	>``` xml
-	><key>NSPhotoLibraryUsageDescription</key>
-	><string>${PRODUCT_NAME} photo use</string>
-	><key>NSCameraUsageDescription</key>
-	><string>${PRODUCT_NAME} camera use</string>
-	>```
 
 25. And last, let's add the elements that will add our new character to the list, open your `app/pages/characters/characters.html` file and paste:
 
