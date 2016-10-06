@@ -21,13 +21,16 @@
 	``` sh
 	cd workshop-jsconfco
 	```
-4. And run:
-
+4. Run:
 	``` sh
 	npm install
-  tns build android
-  tns build ios
+	````
+and then:
+	``` sh
+	tns build android
+	tns build ios
 	```
+
 5. Now let's run our base app on the emulator/device:
 
 	``` sh 
@@ -52,9 +55,9 @@
 			templateUrl: "pages/login/login.html"
 	})
 	export class LoginComponent {
-			constructor(private page: Page) {
-					page.actionBarHidden = true;
-			}
+		constructor(private page: Page) {
+			page.actionBarHidden = true;
+		}
 	}
 	```
 
@@ -62,23 +65,23 @@
 
 	``` html
 	<GridLayout rows="*,*,*,*" columns="*" verticalAlignment="center" horizontalAlignment="stretch">
-			<!-- Text -->
-			<Label row="0" col="0" text="Login" textWrap="true" class="login-title"></Label>
+		<!-- Text -->
+		<Label row="0" col="0" text="Login" textWrap="true" class="login-title"></Label>
 
-			<!-- Email Input -->
-			<AbsoluteLayout row="1" col="0" class="fontAwesome-icons">
-					<Label text="&#xf007;"></Label>
-					<TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
-			</AbsoluteLayout>
+		<!-- Email Input -->
+		<AbsoluteLayout row="1" col="0" class="fontAwesome-icons">
+			<Label text="&#xf007;"></Label>
+			<TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+		</AbsoluteLayout>
 
-			<!-- Password Input -->
-			<AbsoluteLayout row="2" col="0" class="fontAwesome-icons margin-bottom-m">
-					<Label text="&#xf023;"></Label>
-					<TextField hint="Password" secure="true"></TextField>
-			</AbsoluteLayout>
+		<!-- Password Input -->
+		<AbsoluteLayout row="2" col="0" class="fontAwesome-icons margin-bottom-m">
+			<Label text="&#xf023;"></Label>
+			<TextField hint="Password" secure="true"></TextField>
+		</AbsoluteLayout>
 
-			<!-- Login Btn -->
-			<Button row="3" col="0" text="Ingresar" class="btn-fontSize btn-positive"></Button>
+		<!-- Login Btn -->
+		<Button row="3" col="0" text="Ingresar" class="btn-fontSize btn-positive"></Button>
 	</GridLayout>
 	```
 
@@ -96,7 +99,7 @@
 	];
 	```
 
-10. Now, open your `app/app.component.ts` and pasthe the following tag <page-router-outlet>, which is your app first directive:
+10. Now, open your `app/app.component.ts` and paste the following tag <page-router-outlet>, which is your app first directive:
 
 	``` javascript
 	import { Component } from "@angular/core";
@@ -119,17 +122,17 @@
 	import { routes, navigatableComponents } from "./app.routing";
 
 	@NgModule({
-			declarations: [
-					AppComponent, 
-					...navigatableComponents
-			],
-			bootstrap: [AppComponent],
-			imports: [
-					NativeScriptModule,
-					NativeScriptFormsModule,
-					NativeScriptRouterModule, 
-					NativeScriptRouterModule.forRoot(routes)
-			],
+		declarations: [
+			AppComponent, 
+			...navigatableComponents
+		],
+		bootstrap: [AppComponent],
+		imports: [
+			NativeScriptModule,
+			NativeScriptFormsModule,
+			NativeScriptRouterModule, 
+			NativeScriptRouterModule.forRoot(routes)
+		],
 	})
 	
 	class AppComponentModule {}
@@ -150,7 +153,7 @@
 	tns livesync ios --emulator --watch / tns livesync ios --watch
 	```
 
-13. Now, lt's create a partial file to use and import in our app. Open your `app/styles/_variables.scss` and paste the following code:
+13. Now, let's create a partial file to use and import in our app. Open your `app/styles/_variables.scss` and paste the following code:
 
 	``` scss
 	//Colors
@@ -165,63 +168,63 @@
 	$fontSize-btn: 16px; 
 	```
 
-14. Now let's call those global variables and use it. Open your app Sass file `app/app.scss` and paste:
+14. Now let's call those global variables and use them. Open your app Sass file `app/app.scss` and paste:
 
 	```scss
 	@import 'styles/_variables.scss';
 	.fontAwesome-icons {
-			font-size: 20;
-			font-family: 'FontAwesome'
+		font-size: 20;
+		font-family: 'FontAwesome'
 	}
 
 	TextField,
 	TextView {
-			border-width: 1;
-			border-color: $primary-gray;
+		border-width: 1;
+		border-color: $primary-gray;
 	}
 
 	.btn-fontSize {
-			font-size: $fontSize-btn;
+		font-size: $fontSize-btn;
 	}
 
 	.btn-positive {
-			background-color: $button-blue;
-			color: white;
+		background-color: $button-blue;
+		color: white;
 	}
 	.btn-green {
-			background-color: $button-green;
-			color: white;
+		background-color: $button-green;
+		color: white;
 	}
 
 	.margin-m {
-			margin: 10;
+		margin: 10;
 	}
 	.margin-noTop-m{
-			margin: 0 10;
+		margin: 0 10;
 	}
 	.margin-l {
-			margin: 15;
+		margin: 15;
 	}
 	.margin-left-s {
-			margin-left: 5;
+		margin-left: 5;
 	}
 
 	.margin-top-m {
-			margin-top: 10;
+		margin-top: 10;
 	}
 	.margin-bottom-s {
-			margin-bottom: 5;
+		margin-bottom: 5;
 	}
 
 	.margin-bottom-m {
-			margin-bottom: 10;
+		margin-bottom: 10;
 	}
 
 	.padding-m {
-			padding: 10;
+		padding: 10;
 	}
 	.padding-left {
-			padding-left:15;
+		padding-left:15;
 	} 
 	```
 
@@ -232,39 +235,39 @@
 	import { Router } from "@angular/router";
 
 	@Component({
-			selector: "my-app",
-			templateUrl: "pages/login/login.html",
-			styleUrls: ['pages/login/login-common.css']
+		selector: "my-app",
+		templateUrl: "pages/login/login.html",
+		styleUrls: ['pages/login/login-common.css']
 	})
 
 	export class LoginComponent {
 	}
 	```
 
-	and then add the styles inside your `app/pages/login/login-common.scss` Sass file and paste:
+	and then add the styles inside your `app/pages/login/login-common.scss` Sass file:
 
 	``` scss
 	@import 'styles/_variables.scss';
 
 	GridLayout {
-			margin: 50;
+		margin: 50;
 	}
 
 	Button {
-			border-radius: 5;
-			width: 70%;
-			height: 50;
+		border-radius: 5;
+		width: 70%;
+		height: 50;
 	}
 
 	TextField {
-			padding-left: 35;
-			height: 50;
-			width:100%;
+		padding-left: 35;
+		height: 50;
+		width:100%;
 	}
 
 	Label {
-			top: 15;
-			left: 10
+		top: 15;
+		left: 10
 	}
 	```
 
@@ -275,9 +278,9 @@
 	import { Router } from "@angular/router";
 
 	@Component({
-			selector: "my-app",
-			templateUrl: "pages/login/login.html",
-			styleUrls: ['pages/login/login-common.css', 'pages/login/login.css']
+		selector: "my-app",
+		templateUrl: "pages/login/login.html",
+		styleUrls: ['pages/login/login-common.css', 'pages/login/login.css']
 	})
 
 	export class LoginComponent { }
@@ -289,10 +292,10 @@
 	@import 'styles/_variables.scss';
 
 	.login-title{
-			font-size: 26;
-			color: $button-orange;
-			text-align:center;
-			margin-bottom: 20;
+		font-size: 26;
+		color: $button-orange;
+		text-align:center;
+		margin-bottom: 20;
 	}
 	```
 
@@ -302,14 +305,14 @@
 	@import 'styles/_variables.scss';
 
 	.login-title{
-			font-size: 26;
-			color: $button-blue;
-			text-align:center;
-			margin-bottom: 20;
+		font-size: 26;
+		color: $button-blue;
+		text-align:center;
+		margin-bottom: 20;
 	}
 	```
 
-17. We have our Login page looks really pretty, so now let's go and create a new page to show after our Login. Let's go and create a new Character component, open your `app/characters/characters.ts` and paste:
+17. We have our Login page looking really pretty, so, now we'll have to create a new page to navigate after we press the Login btn. Let's go and create a new Character component, open your `app/characters/characters.ts` and paste:
 
 	```javascript
 	import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
@@ -317,45 +320,43 @@
 	import * as platform from "platform";
 
 	@Component({
-			selector: 'characters-list',
-			templateUrl: 'pages/characters/characters.html',
-			styleUrls: ['pages/characters/characters.css']
+		selector: 'characters-list',
+		templateUrl: 'pages/characters/characters.html',
+		styleUrls: ['pages/characters/characters.css']
 	})
 
 	export class CharacterListComponent { }
 	```
 
-	and then open `app/characters/characters.html` and paste
+	and then open `app/characters/characters.html` and paste:
 
 	``` html
 	<!-- Action Bar -->
 	<ActionBar title="My Characters List">
-			<ActionItem ios.systemIcon="4" android.systemIcon="ic_menu_add" ios.position="right" android.position="right"></ActionItem>
+		<ActionItem ios.systemIcon="4" android.systemIcon="ic_menu_add" ios.position="right" android.position="right"></ActionItem>
 	</ActionBar>
 
 	<StackLayout orientation="vertical">
+		<!-- Characters List -->
+		<GridLayout>
+			<ListView>
+				<template>
+					<GridLayout class="fontAwesome-icons padding-m" columns="100,*,30" rows="*" verticalAlignment="center">
+						<!-- Thumbnail -->
+						<Image col="0" row="0" verticalAlignment="center" class="margin-m"></Image>
 
-			<!-- Characters List -->
-			<GridLayout>
-					<ListView>
-							<template>
-									<GridLayout class="fontAwesome-icons padding-m" columns="100,*,30" rows="*" verticalAlignment="center">
-											<!-- Thumbnail -->
-											<Image col="0" row="0" verticalAlignment="center" class="margin-m"></Image>
+						<!-- Inputs -->
+						<StackLayout orientation="vertical" col="1" row="0" verticalAlignment="center">
+								<Label verticalAlignment="center" text="Insert name" > </Label>
+								<Label verticalAlignment="center" textWrap="true" text="Insert Description" class="character-desc"></Label>
+						</StackLayout>
 
-											<!-- Inputs -->
-											<StackLayout orientation="vertical" col="1" row="0" verticalAlignment="center">
-													<Label verticalAlignment="center" text="Insert name" > </Label>
-													<Label verticalAlignment="center" textWrap="true" text="Insert Description" class="character-desc">
-													</Label>
-											</StackLayout>
-
-											<!-- Icon -->
-											<Label text="&#xf014;" col="2" row="0" verticalAlignment="center" class="trashIcon"></Label>
-									</GridLayout>
-							</template>
-					</ListView>
-			</GridLayout>
+						<!-- Icon -->
+						<Label text="&#xf014;" col="2" row="0" verticalAlignment="center" class="trashIcon"></Label>
+					</GridLayout>
+				</template>
+			</ListView>
+		</GridLayout>
 	</StackLayout>
 	```
 
@@ -376,7 +377,7 @@
 	]; 
 	```
 
-	now let's go and add the tap event logic to our login button, copy and paste the following inside your `app/login/login.ts` file:
+	now let's go and add the tap event logic for our login button, copy and paste the following code inside your `app/login/login.ts` file:
 	
 	``` javascript
 	import {Component} from "@angular/core";
@@ -394,16 +395,16 @@
 		public password: any;
 
 		constructor(private router: Router, page: Page) {
-				page.actionBarHidden = true;
+			page.actionBarHidden = true;
 		}
 
 		public login(): void {
-				this.router.navigate(["/characters"]);
+			this.router.navigate(["/characters"]);
 		}
 	}
 	```
 
-	and then let's add a tap event handler to our login html, copy and paste the following code inside your `app/login/login.html`
+	and then let's add a tap event handler for our login html, copy and paste the following code inside your `app/login/login.html`
 	
 	``` html
 	<GridLayout rows="*,*,*,*" columns="*" verticalAlignment="center" horizontalAlignment="stretch">
@@ -412,14 +413,14 @@
 
 		<!-- Email Input -->
 		<AbsoluteLayout row="1" col="0" class="fontAwesome-icons">
-				<Label text="&#xf007;"></Label>
-				<TextField hint="Email Address" keyboardType="email" [(ngModel)]="email" autocorrect="false" autocapitalizationType="none"></TextField>
+			<Label text="&#xf007;"></Label>
+			<TextField hint="Email Address" keyboardType="email" [(ngModel)]="email" autocorrect="false" autocapitalizationType="none"></TextField>
 		</AbsoluteLayout>
 
 		<!-- Password Input -->
 		<AbsoluteLayout row="2" col="0" class="fontAwesome-icons margin-bottom-m">
-				<Label text="&#xf023;"></Label>
-				<TextField [(ngModel)]="password" hint="Password" secure="true"></TextField>
+			<Label text="&#xf023;"></Label>
+			<TextField [(ngModel)]="password" hint="Password" secure="true"></TextField>
 		</AbsoluteLayout>
 
 		<!-- Login Btn -->
@@ -427,17 +428,17 @@
 	</GridLayout>
 	```
 
-19. We are logged in inside our app but there's nothing in there yet, so let's add some lists to show. First we add a model to show our list Characters, open your `app/model/character-model.ts` file and paste:
+19. Now we are inside our app but there's nothing there yet, so, let's add some lists in it. First we'll add a model for our list Characters. Open your `app/model/character-model.ts` file and paste:
 
 	``` javascript
 	export class Character {
-			imageUrl: string;
-			name: string;
-			description: any;
+		imageUrl: string;
+		name: string;
+		description: any;
 	}
 
 	export class Data {
-			CHARACTERS: Character[] = [
+		CHARACTERS: Character[] = [
 					{ name: "TJ-VanToll", description: "Telerik developer. Nowadays helps web developers build mobile apps through projects like NativeScript", imageUrl: "~/images/TJ-VanToll.jpeg" },
 					{ name: "Burke Holland", description: "Burke works for Telerik as a Developer Advocate focusing on Kendo UI.", imageUrl: "~/images/burke-holland.png" },
 					{ name: "John Papa", description: "Google Developer Expert, Microsoft Regional Director and MVP, author of 100+ articles and 10 books", imageUrl: "~/images/john-papa.png" },
@@ -454,24 +455,24 @@
 
 	@Injectable()
 	export class CharactersService {
-			public listCharacters;
+		public listCharacters;
 
-			public getCharacters() {
-					this.listCharacters = new Data();
-					return this.listCharacters.CHARACTERS;
-			}
+		public getCharacters() {
+			this.listCharacters = new Data();
+			return this.listCharacters.CHARACTERS;
+		}
 
-			public removeCharacter(item: Character): void {
-					this.listCharacters.CHARACTERS.splice(this.listCharacters.CHARACTERS.indexOf(item), 1);
-			}
+		public removeCharacter(item: Character): void {
+			this.listCharacters.CHARACTERS.splice(this.listCharacters.CHARACTERS.indexOf(item), 1);
+		}
 
-			public addCharacter(item: Character): void {
-					this.listCharacters.CHARACTERS.push(item);
-			}
+		public addCharacter(item: Character): void {
+			this.listCharacters.CHARACTERS.push(item);
+		}
 	}
 	```
 
-21. Now, let's call our service inside our Characters component to show our data, open your `app/pages/characters/characters.ts` file and paste:
+21. Now, let's call our service inside our Characters component, open your `app/pages/characters/characters.ts` file and paste:
 
 	``` javascript
 	import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
@@ -481,31 +482,30 @@
 	import {Character} from "../../model/character-model";
 
 	@Component({
-			selector: 'characters-list',
-			templateUrl: 'pages/characters/characters.html',
-			styleUrls: ['pages/characters/characters.css'],
-			providers: [CharactersService, Character]
+		selector: 'characters-list',
+		templateUrl: 'pages/characters/characters.html',
+		styleUrls: ['pages/characters/characters.css'],
+		providers: [CharactersService, Character]
 	})
 
 	export class CharacterListComponent {
-			public characterList;
-			public switchCharacter: boolean = false;
+		public characterList;
+		public switchCharacter: boolean = false;
 
-			constructor(private charactersService: CharactersService, private character: Character) {
-			}
+		constructor(private charactersService: CharactersService, private character: Character) {
+		}
 
-			public ngOnInit(): void {
-				this.characterList = this.charactersService.getCharacters();
-			}
+		public ngOnInit(): void {
+			this.characterList = this.charactersService.getCharacters();
+		}
 
-			public removeCharacter(item): void {
-				this.charactersService.removeCharacter(item);
-			}
-
+		public removeCharacter(item): void {
+			this.charactersService.removeCharacter(item);
+		}
 	}
 	```
 
-22. To see our list working let's bind the model to the Characters html file, open your `app/pages/characters/characters.html` file and paste:
+22. To see our list working let's bind the model to the Characters.html file, open your `app/pages/characters/characters.html` file and paste:
 
 	``` html
 	<!-- Action Bar -->
@@ -514,27 +514,25 @@
 	</ActionBar>
 
 	<StackLayout orientation="vertical">
-		
 		<!-- Characters List -->
-			<GridLayout>
-				<ListView [items]="characterList">
-						<template let-item="item">
-								<GridLayout class="fontAwesome-icons padding-m" columns="100,*,30" rows="*" verticalAlignment="center">
-										<!-- Thumbnail -->
-										<Image [src]="item.imageUrl" col="0" row="0" verticalAlignment="center" class="margin-m"></Image>
+		<GridLayout>
+			<ListView [items]="characterList">
+				<template let-item="item">
+					<GridLayout class="fontAwesome-icons padding-m" columns="100,*,30" rows="*" verticalAlignment="center">
+						<!-- Thumbnail -->
+						<Image [src]="item.imageUrl" col="0" row="0" verticalAlignment="center" class="margin-m"></Image>
 
-										<!-- Inputs -->
-										<StackLayout orientation="vertical" col="1" row="0" verticalAlignment="center">
-												<Label verticalAlignment="center" [text]="item.name" > </Label>
-												<Label verticalAlignment="center" textWrap="true" [text]="item.description" class="character-desc">
-												</Label>
-										</StackLayout>
-
-										<!-- Icon -->
-										<Label text="&#xf014;" col="2" row="0" verticalAlignment="center" class="trashIcon" (tap)="removeCharacter(item)"></Label>
-								</GridLayout>
-						</template>
-				</ListView>
+						<!-- Inputs -->
+						<StackLayout orientation="vertical" col="1" row="0" verticalAlignment="center">
+							<Label verticalAlignment="center" [text]="item.name" > </Label>
+							<Label verticalAlignment="center" textWrap="true" [text]="item.description" class="character-desc"></Label>
+						</StackLayout>
+						
+						<!-- Icon -->
+						<Label text="&#xf014;" col="2" row="0" verticalAlignment="center" class="trashIcon" (tap)="removeCharacter(item)"></Label>
+					</GridLayout>
+				</template>
+			</ListView>
 		</GridLayout>
 	</StackLayout>
 	```
@@ -545,39 +543,39 @@
 	@import 'styles/_variables.scss';
 
 	.addIcon {
-			width: 50;
-			text-align: center;
+		width: 50;
+		text-align: center;
 	}
 
 	.trashIcon {
-			color: $red;
+		color: $red;
 	}
 
 	.addIcon-padding {
-			padding-right: 0;
+		padding-right: 0;
 	}
 
 	.character-name {
-			font-size: 16;
-			font-weight: bold;
+		font-size: 16;
+		font-weight: bold;
 	}
 
 	.character-desc {
-			margin-top: 5;
-			font-size: 15;
-			padding-right: 15;
+		margin-top: 5;
+		font-size: 15;
+		padding-right: 15;
 	}
 
 	.btn-height {
-			height: 50;
+		height: 50;
 	}
 
 	.btn-height-m {
-			height: 70;
+		height: 70;
 	}
 	```
 
-23. Now let's do some hardware access. We'll have to create a new character and obviously upload some picture to it but to do that first we'll have to add some Nativescript plugins. If you are still listening the live changes, type **Ctrl+C** in your terminal to kill it. go to your terminal and paste:
+23. Now let's do some hardware access. We'll have to create a new character and obviously upload a picture to it but to do that first we'll have to add some Nativescript plugins. If you are still listening the live changes, type **Ctrl+C** in your terminal to kill it. Go to your terminal and paste:
 
 	``` sh
 	tns plugin add nativescript-imagepicker
@@ -591,7 +589,7 @@
 	tns livesync ios --emulator --watch / tns livesync ios --watch
 	```
 
-24. Now let's add some functions to create our new Character and every necessary event to upload the image from the gallery, open your `app/pages/characters/characters.ts` file and paste:
+24. Now let's add some functions that will create our new Character and will handle the events to upload the image from the gallery, open your `app/pages/characters/characters.ts` file and paste:
 
 	``` javascript
 	import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
@@ -605,79 +603,79 @@
 	declare var android: any;
 
 	@Component({
-			selector: 'characters-list',
-			templateUrl: 'pages/characters/characters.html',
-			styleUrls: ['pages/characters/characters.css'],
-			providers: [CharactersService, Character]
+		selector: 'characters-list',
+		templateUrl: 'pages/characters/characters.html',
+		styleUrls: ['pages/characters/characters.css'],
+		providers: [CharactersService, Character]
 	})
 
 	export class CharacterListComponent {
-			public characterList;
-			public switchCharacter: boolean = false;
+		public characterList;
+		public switchCharacter: boolean = false;
 
-			constructor(private charactersService: CharactersService, private character: Character) {
-			}
+		constructor(private charactersService: CharactersService, private character: Character) {
+		}
 
-			public ngOnInit(): void {
-					this.characterList = this.charactersService.getCharacters();
-			}
+		public ngOnInit(): void {
+			this.characterList = this.charactersService.getCharacters();
+		}
 
-			public cancel(): void {
-					this.switchCharacter = false;
-			}
+		public cancel(): void {
+			this.switchCharacter = false;
+		}
 
-			public addNewCharacter(): void {
-					this.character = new Character();
-					this.character.imageUrl = "~/images/camera-icon.png";
-					this.switchCharacter = true;
-			}
+		public addNewCharacter(): void {
+			this.character = new Character();
+			this.character.imageUrl = "~/images/camera-icon.png";
+			this.switchCharacter = true;
+		}
 
-			public save(item): void {
-					this.charactersService.addCharacter(item);
-					this.switchCharacter = false;
-			}
+		public save(item): void {
+			this.charactersService.addCharacter(item);
+			this.switchCharacter = false;
+		}
 
-			public removeCharacter(item): void {
-					this.charactersService.removeCharacter(item);
-			}
+		public removeCharacter(item): void {
+			this.charactersService.removeCharacter(item);
+		}
 
 
-			public uploadImage(): void {
-					let context = imagepickerModule.create({
-							mode: "single"
+		public uploadImage(): void {
+			let context = imagepickerModule.create({
+				mode: "single"
+			});
+			if (platform.device.os === "Android" && platform.device.sdkVersion >= "23") {
+				permissions.requestPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE, "I need these permissions to read from storage")
+					.then(() => {
+						this.startSelection(context);
+					})
+					.catch((err) => {
+						console.log("Permiso denegado! :( ", err);
 					});
-					if (platform.device.os === "Android" && platform.device.sdkVersion >= "23") {
-							permissions.requestPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE, "I need these permissions to read from storage")
-									.then(() => {
-											this.startSelection(context);
-									})
-									.catch((err) => {
-											console.log("Permiso denegado! :( ", err);
-									});
-					} else {
-							this.startSelection(context);
-					}
+			} else {
+				this.startSelection(context);
 			}
+		}
 
-			public startSelection(context): void {
-					context
-							.authorize()
-							.then(() => {
-									return context.present();
-							})
-							.then((selection) => {
-									selection.forEach((selected) => {
-											this.character.imageUrl = selected.thumb;
-									});
-							})
-							.catch((e) => {
-									console.log(e);
-							});
-			}
-
+		public startSelection(context): void {
+			context
+				.authorize()
+				.then(() => {
+					return context.present();
+				})
+				.then((selection) => {
+					selection.forEach((selected) => {
+						this.character.imageUrl = selected.thumb;
+					});
+				})
+				.catch((e) => {
+					console.log(e);
+				});
+		}
 	}
 	```
 	>PLease note that for IOS 10 and newer versions you need to rquest for some permissions before access the user private data like gallery, contact number, photos , location , calendar , etc. So you'll have to declare the following in your `app/App_Resources/iOS/Info.plist` file:
+	
 	>``` xml
 	><key>NSPhotoLibraryUsageDescription</key>
 	><string>${PRODUCT_NAME} photo use</string>
@@ -685,56 +683,53 @@
 	><string>${PRODUCT_NAME} camera use</string>
 	>```
 
-25. And last, let's add the xml tags that will include our new character to the list, open your `app/pages/characters/characters.html` file and paste:
+25. And last, let's add the elements that will add our new character to the list, open your `app/pages/characters/characters.html` file and paste:
 
-    ``` html
-    <!-- Action Bar -->
-    <ActionBar title="My Characters List">
-        <ActionItem ios.systemIcon="4" android.systemIcon="ic_menu_add" ios.position="right" android.position="right" (tap)="addNewCharacter()"></ActionItem>
-    </ActionBar>
+  ``` html
+	<!-- Action Bar -->
+	<ActionBar title="My Characters List">
+		<ActionItem ios.systemIcon="4" android.systemIcon="ic_menu_add" ios.position="right" android.position="right" (tap)="addNewCharacter()"></ActionItem>
+	</ActionBar>
 
     <StackLayout orientation="vertical">
-        
-        <!-- Ann New CHaracter -->
-        <GridLayout  columns="80,*" rows="100,*,*" verticalAlignment="center" *ngIf="switchCharacter" class="padding-m">
-            <!-- Thumbnail -->
-            <Image col="0" rowSpan="2" verticalAlignment="center" [src]="character.imageUrl" (tap)="uploadImage()" class="margin-m"></Image>
+	    <!-- Ann New CHaracter -->
+      <GridLayout  columns="80,*" rows="100,*,*" verticalAlignment="center" *ngIf="switchCharacter" class="padding-m">
+  	    <!-- Thumbnail -->
+        <Image col="0" rowSpan="2" verticalAlignment="center" [src]="character.imageUrl" (tap)="uploadImage()" class="margin-m"></Image>
+    
+				<!-- Inputs -->
+        <StackLayout orientation="vertical" col="1" rowSpan="2" verticalAlignment="center">
+        	<TextField hint="Enter name" keyboardType="text" autocorrect="false" autocapitalizationType="none" [(ngModel)]="character.name" class="margin-bottom-s btn-height"></TextField>
+          <TextView hint="Enter description" [editable]="true" [(ngModel)]="character.description" class="btn-height-m"></TextView>
+        </StackLayout>
 
-            <!-- Inputs -->
-            <StackLayout orientation="vertical" col="1" rowSpan="2" verticalAlignment="center">
-                <TextField hint="Enter name" keyboardType="text" autocorrect="false" autocapitalizationType="none" [(ngModel)]="character.name" class="margin-bottom-s btn-height"></TextField>
-                <TextView hint="Enter description" [editable]="true" [(ngModel)]="character.description" class="btn-height-m"></TextView>
-            </StackLayout>
-
-            <!-- Buttons -->
-            <GridLayout rows="*" columns="*, *" colSpan="2" row="2" verticalAlignment="center" class="margin-noTop-m">
-                <Button row="0" col="0" text="Save" (tap)="save(character)" class="btn-fontSize btn-positive btn-height"></Button>
-                <Button row="0" col="1" text="Cancel" (tap)="cancel()" class="btn-fontSize btn-green margin-left-s btn-height"></Button>
-            </GridLayout>
-        </GridLayout>
+        <!-- Buttons -->
+        <GridLayout rows="*" columns="*, *" colSpan="2" row="2" verticalAlignment="center" class="margin-noTop-m">
+        	<Button row="0" col="0" text="Save" (tap)="save(character)" class="btn-fontSize btn-positive btn-height"></Button>
+          <Button row="0" col="1" text="Cancel" (tap)="cancel()" class="btn-fontSize btn-green margin-left-s btn-height"></Button>
+      	</GridLayout>
+      </GridLayout>
 
         <!-- Characters List -->
         <GridLayout>
-            <ListView [items]="characterList">
-                <template let-item="item">
-                    <GridLayout class="fontAwesome-icons padding-m" columns="100,*,30" rows="*" verticalAlignment="center">
-                        <!-- Thumbnail -->
-                        <Image [src]="item.imageUrl" col="0" row="0" verticalAlignment="center" class="margin-m"></Image>
+        	<ListView [items]="characterList">
+          	<template let-item="item">
+            	<GridLayout class="fontAwesome-icons padding-m" columns="100,*,30" rows="*" verticalAlignment="center">
+	              <!-- Thumbnail -->
+              	<Image [src]="item.imageUrl" col="0" row="0" verticalAlignment="center" class="margin-m"></Image>
+                <!-- Inputs -->
+  							<StackLayout orientation="vertical" col="1" row="0" verticalAlignment="center">
+                	<Label verticalAlignment="center" [text]="item.name" > </Label>
+                  <Label verticalAlignment="center" textWrap="true" [text]="item.description" class="character-desc"></Label>
+                </StackLayout>
 
-                        <!-- Inputs -->
-                        <StackLayout orientation="vertical" col="1" row="0" verticalAlignment="center">
-                            <Label verticalAlignment="center" [text]="item.name" > </Label>
-                            <Label verticalAlignment="center" textWrap="true" [text]="item.description" class="character-desc">
-                            </Label>
-                        </StackLayout>
-
-                        <!-- Icon -->
-                        <Label text="&#xf014;" col="2" row="0" verticalAlignment="center" class="trashIcon" (tap)="removeCharacter(item)"></Label>
-                    </GridLayout>
-                 </template>
-            </ListView>
-        </GridLayout>
+                <!-- Icon -->
+                <Label text="&#xf014;" col="2" row="0" verticalAlignment="center" class="trashIcon" (tap)="removeCharacter(item)"></Label>
+              </GridLayout>
+            </template>
+         </ListView>
+      </GridLayout>
     </StackLayout>
     ```
 
-26. And that's it, we have our list working!!!
+26. And that's it, we have our Character list working!!!
