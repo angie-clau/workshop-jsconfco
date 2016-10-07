@@ -1,7 +1,10 @@
 # Nativescript + Angular 2 workshop for JSConf Colombia
 
+![alt text](https://github.com/angie-clau/workshop-jsconfco/blob/master/app/images/workshop-wireframe.jpeg "Workshop Wireframe")
+
 > This workshop assumes you have already set up your system for Mobile development. 
 > If not, please refer to http://docs.nativescript.org/angular/start/quick-setup
+
 
 ### Instructions
 
