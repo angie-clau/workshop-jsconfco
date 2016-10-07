@@ -236,6 +236,7 @@ and then:
 	``` javascript
 	import {Component} from "@angular/core";
 	import { Router } from "@angular/router";
+	import {Page} from "ui/page";
 
 	@Component({
 		selector: "my-app",
@@ -282,6 +283,7 @@ and then:
 	``` javascript  
 	import {Component} from "@angular/core";
 	import { Router } from "@angular/router";
+	import {Page} from "ui/page";
 
 	@Component({
 		selector: "my-app",
